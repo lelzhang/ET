@@ -129,6 +129,11 @@
       <Link>Module\Network\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </Compile>
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="..\..\Unity\Assets\Model\Module\Config\ACategory.cs" />
+    <Compile Remove="..\..\Unity\Assets\Model\Module\Config\ConfigHelper.cs" />
+  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.2.1" />

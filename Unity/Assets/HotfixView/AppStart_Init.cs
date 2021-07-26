@@ -8,7 +8,7 @@ namespace ET
             Game.Scene.AddComponent<CoroutineLockComponent>();
 
             // 加载配置
-            Game.Scene.AddComponent<ResourcesComponent>();
+           // Game.Scene.AddComponent<ResourcesComponent>();
             ResourcesComponent.Instance.LoadBundle("config.unity3d");
             Game.Scene.AddComponent<ConfigComponent>();
             await ConfigComponent.Instance.LoadAsync();

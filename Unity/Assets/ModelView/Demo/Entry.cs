@@ -28,8 +28,12 @@ namespace ET
 				ProtobufHelper.Init();
 				
 				Game.Options = new Options();
-				
-				Game.EventSystem.Publish(new EventType.AppStart());
+
+				//Game.EventSystem.Publish(new EventType.AppStart());
+
+				Game.Scene.AddComponent<ResourcesComponent>();
+
+				Game.Hotfix.LoadHotfixAssembly();
 			}
 			catch (Exception e)
 			{

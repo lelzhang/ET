@@ -7,7 +7,7 @@
         "Unity.ModelView",
         "Unity.Hotfix",
         "Unity.HotfixView",
-        "Unity.Mono"
+        "ILRuntime"
     ],
     "includePlatforms": [
         "Editor"

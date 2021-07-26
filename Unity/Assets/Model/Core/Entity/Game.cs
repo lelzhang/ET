@@ -24,6 +24,18 @@ namespace ET
                 return scene;
             }
         }
+#if !SERVER && !ROBOT
+        private static Hotfix hotfix;
+
+        public static Hotfix Hotfix
+        {
+            get
+            {
+                return hotfix ?? (hotfix = new Hotfix());
+            }
+        } 
+
+#endif
 
         public static ObjectPool ObjectPool => ObjectPool.Instance;
 
