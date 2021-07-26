@@ -1,6 +1,8 @@
   
 @echo off 
+title StartServer
 cd ../Bin
-dotnet Server.App.dll
+@echo on
+dotnet Server.App.dll --Process=1 --Console=1
 
 pause
