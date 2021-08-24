@@ -11,11 +11,13 @@ namespace ET
             Game.Scene.AddComponent<ConfigComponent>();
             await ConfigComponent.Instance.LoadAsync();
             
-            Game.Scene.AddComponent<OpcodeTypeComponent>();
-            Game.Scene.AddComponent<MessageDispatcherComponent>();
-            Game.Scene.AddComponent<NetThreadComponent>();
+            Game.Scene.AddComponent<OpcodeTypeComponent>();//加载消息
+            Game.Scene.AddComponent<MessageDispatcherComponent>(); //收发消息
+            Game.Scene.AddComponent<NetThreadComponent>();//网络组件
             Game.Scene.AddComponent<ZoneSceneManagerComponent>();
             Game.Scene.AddComponent<AIDispatcherComponent>();
+            Game.Scene.AddComponent<RobotCaseDispatcherComponent>();
+            Game.Scene.AddComponent<RobotCaseComponent>();
             
             var processScenes = StartSceneConfigCategory.Instance.GetByProcess(Game.Options.Process);
             foreach (StartSceneConfig startConfig in processScenes)

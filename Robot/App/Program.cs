@@ -11,6 +11,10 @@ namespace ET
     {
         private static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
+            {
+                Log.Error(e.ExceptionObject.ToString());
+            };
             // 异步方法全部会回掉到主线程
             SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
 			
@@ -18,8 +22,8 @@ namespace ET
             {		
                 Game.EventSystem.Add(typeof(Game).Assembly);
                 Game.EventSystem.Add(DllHelper.GetHotfixAssembly());
-				
-                ProtobufHelper.Init();
+
+                ProtobufHelper.Init();//初始化静态类型
                 MongoHelper.Init();
 				
                 // 命令行参数
