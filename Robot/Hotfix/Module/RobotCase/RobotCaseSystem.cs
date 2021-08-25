@@ -77,6 +77,11 @@ namespace ET
             }
         }
 
+        /// <summary>
+        /// 新建的机器人会执行一遍登录流程，（验证账号可以在这里判断注册并登录）
+        /// </summary>
+        /// <param name="self"></param>
+        /// <returns></returns>
         private static async ETTask<Scene> NewRobot(this RobotCase self)
         {
             int zone = self.GetParent<RobotCaseComponent>().GetN();
